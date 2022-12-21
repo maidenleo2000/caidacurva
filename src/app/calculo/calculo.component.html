@@ -1,0 +1,22 @@
+<h2 class="flex justify-content-center">Calcular Caída de Curvatura</h2>
+<br>
+
+
+
+<div class="col col-12">
+    <p-card class="flex justify-content-center">
+        <span class="p-float-label">
+            <input id="float-input" type="number" pInputText [(ngModel)]="this.dato">
+            <label for="float-input">Ingrese distancia en km</label>
+        </span>
+        <br>
+        <button (click)="calcular(dato)" pButton type="button" label="Calcular" class="p-button-success"></button>
+        <button (click)="borrar()" pButton type="button" label="Borrar" class="p-button-danger"></button>
+    </p-card>
+</div>
+<br>
+<div class="col col-12" *ngIf="response>0">
+    <p-card class="flex justify-content-center">
+        El horizonte se esconde {{response | number: '0.0-2'}} metros en una esfera.
+    </p-card>
+</div>
